@@ -40,7 +40,7 @@ docker-compose up -d --build
 Este comando irá:
 
 - Construir a imagem da Web API (**CalculadoraCdb.Api**)
-- Construir a imagem do Frontend (**cdb-frontend**)
+- Construir a imagem do Frontend (**calculadora-frontend**)
 - Orquestrar a comunicação entre eles
 
 ---
@@ -49,7 +49,7 @@ Este comando irá:
 
 Após a conclusão do build, as aplicações estarão disponíveis nos seguintes endereços:
 
-- **Frontend (Angular):** http://localhost:4200
+- **Frontend (Angular):** http://localhost:8081
 - **Web API (.NET):** http://localhost:5000
 - **Documentação Swagger:** http://localhost:5000/swagger
 
