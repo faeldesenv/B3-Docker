@@ -1,0 +1,31 @@
+# Build output
+**/bin/
+**/obj/
+**/publish/
+
+# Frontend (não precisa para build do backend)
+frontend/
+
+# Dependências
+**/node_modules/
+**/dist/
+
+# IDE e editores
+**/.vs/
+**/.vscode/
+**/.idea/
+**/*.user
+
+# Git
+.git/
+.gitignore
+
+# Logs e temporários
+*.log
+.DS_Store
+Thumbs.db
+
+# Docker
+**/docker-compose*
+**/Dockerfile*
+**/.dockerignore

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CdbService } from '../../services/cdb.service';
@@ -10,6 +10,9 @@ import { CdbCalculationResult } from '../../models/cdb.model';
   styleUrls: ['./cdb-calculator.component.scss']
 })
 export class CdbCalculatorComponent implements OnInit {
+  private readonly fb = inject(FormBuilder);
+  private readonly cdbService = inject(CdbService);
+
   form!: FormGroup;
   result: CdbCalculationResult | null = null;
   isLoading = false;
@@ -17,11 +20,6 @@ export class CdbCalculatorComponent implements OnInit {
 
   private _rawValue = 0;
   displayValue = '';
-
-  constructor(
-    private readonly fb: FormBuilder,
-    private readonly cdbService: CdbService
-  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({

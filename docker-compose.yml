@@ -1,0 +1,31 @@
+services:
+  calculadoracdb.api:
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    image: ${DOCKER_REGISTRY-}calculadoracdbapi
+    build:
+      context: .
+      dockerfile: CalculadoraCdb.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    networks:
+      - cdb-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - API_URL=http://localhost:5000
+    container_name: frontend
+    ports:
+      - "8081:80"
+    networks:
+      - cdb-network
+    depends_on:
+      calculadoracdb.api:
+        condition: service_healthy
+
+networks:
+  cdb-network:
+    driver: bridge

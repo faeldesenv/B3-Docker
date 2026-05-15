@@ -1,0 +1,21 @@
+# Dependências e build
+node_modules/
+dist/
+
+# IDE e editores
+.vs/
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Logs e temporários
+*.log
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+.dockerignore
